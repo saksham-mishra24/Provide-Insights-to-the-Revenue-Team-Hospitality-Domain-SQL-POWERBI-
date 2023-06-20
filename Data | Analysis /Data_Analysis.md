@@ -274,7 +274,7 @@ FROM (
     ) D
 ) e
 GROUP BY e.Month_year
-ORDER BY Total_capacity DESC, Total_booking DESC, Cancelled_booking DESC;
+ORDER BY SUM(e.capacity) DESC, SUM(e.count_c) DESC, SUM(e.Cancelled_booking) DESC,SUM(e.No_show) DESC
 ```
 #### Answer:
 
@@ -330,7 +330,7 @@ FROM (
     ) D
 ) e
 GROUP BY e.city
-ORDER BY Total_capacity DESC, Total_booking DESC, Total_No_show DESC;
+ORDER BY SUM(e.capacity) DESC, SUM(e.count_c) DESC, SUM(e.Cancelled_booking) DESC,SUM(e.No_show) DESC
 ```
 |city	|Total_capacity	|Total_booking	|Cancelled_booking	|Total_No_show|
 |----------|-------------------|-------------------|------------------|-------------|
@@ -384,13 +384,13 @@ FROM (
     ) D
 ) e
 GROUP BY e.Day_type
-ORDER BY Total_capacity DESC, Total_booking DESC, Total_No_show DESC;
+ORDER BY SUM(e.capacity) DESC, SUM(e.count_c) DESC, SUM(e.Cancelled_booking) DESC,SUM(e.No_show) DESC
 ```
 
 |Day_type	|Total_capacity	|Total_booking|	Cancelled_booking|Total_No_show|
 |----------|-------------------|-------------------|------------------|-----|
-Weekend    |	68k|	50k| 12k  |	3k
-Weekday	   |   164k|   84k | 21k  |	4k
+Weekday	|164k|	84k|	21k|	4k
+Weekend	|68k|	50k|	12k|	3k
 
 * ROOM_CLASS :
 
@@ -434,8 +434,7 @@ FROM (
         GROUP BY  r.room_class) D
 ) e
 GROUP BY e.room_class
-ORDER BY Total_capacity DESC, Total_booking DESC,Total_No_show desc
-
+ORDER BY SUM(e.capacity) DESC, SUM(e.count_c) DESC, SUM(e.Cancelled_booking) DESC,SUM(e.No_show) DESC
 ```
 |room_class |	Total_capacity|	Total_booking|	Cancelled_booking	|Total_No_show
 |----------|-------------------|-------------------|------------------|-----------------|
@@ -486,27 +485,26 @@ FROM (
         GROUP BY   B.Week_no) D
 ) e
 GROUP BY e.Week_no
-ORDER BY Total_capacity DESC, Total_booking DESC
+ORDER BY SUM(e.capacity) DESC, SUM(e.count_c) DESC, SUM(e.Cancelled_booking) DESC,SUM(e.No_show) DESC
 
 ```
 
 |Week_no	|Total_capacity	|Total_booking	|Cancelled_booking	|Total_No_show
 |----------|-------------------|-------------------|------------------|-----------------|
-|32|	3k|	2k|	0k	|0k
-|23|	18k|	9k|	2k|	0k
-|30|	18k|	9k|	2k|	0k
-|31|	18k|	9k|2k	0k|
-|21|	18k|	9k|	2k|	0k
-|26|	18k|	9k|	2k|	0k
-|27|	18k|	11k|	3k|	1k
-|28|	18k|	11k|	3k|	1k
-|29|	18k|	11k|	3k|	1k
-|22|	18k|	11k|	3k|	1k
-|19|	18k|	11k|	3k|	1k
-|20|	18k|	11k|	3k|	1k
-|24|	18k|	11k	|3k|	1k
-|25|	18k|	11k|	3k|	1k
-
+|24	|18k|	11k|	3k|	1k
+|29	|18k|	11k|	3k|	1k
+|19	|18k|	11k|	3k|	1k
+|27	|18k|	11k|	3k|	1k
+|20	|18k|	11k|	3k|	1k
+|25	|18k|	11k|	3k|	1k
+|22	|18k|	11k|	3k|	1k
+|28	|18k|	11k|	3k|	1k
+|23	|18k|	9k|	2k|	0k
+|21	|18k|	9k|	2k|	0k
+|31	|18k|	9k|	2k|	0k
+|30	|18k|	9k|	2k|	0k
+|26	|18k|	9k|	2k|	0k
+|32	|3k|	2k|	0k|	0k
 
 * PLATFORM :
 
@@ -539,7 +537,7 @@ FROM (
         GROUP BY   booking_platform) c
 ) d
 GROUP BY D.booking_platform
-ORDER BY  SUM(D.count_c) DESC
+ORDER BY SUM(D.count_c) DESC, SUM(D.Cancelled_booking) DESC,SUM(D.No_show) DESC
 ```
 |booking_platform	|Total_booking	|Cancelled_booking|	Total_No_show|
 |----------|-------------------|-------------------|------------------|
@@ -592,18 +590,18 @@ FROM (
         GROUP BY   h.property_name) D
 ) e
 GROUP BY e.property_name
-ORDER BY Total_capacity DESC, Total_booking DESC
+ORDER BY SUM(e.capacity) DESC, SUM(e.count_c) DESC, SUM(e.Cancelled_booking) DESC,SUM(e.No_show) DESC
 ```
 
 |property_name|	Total_capacity	|Total_booking|Cancelled_booking|	Total_No_show|
 |----------|-------------------|-------------------|------------------|-----------------|
-|Atliq Seasons   |9k |   4k|	1k|	0k
-|Atliq Exotica	|41k|	23k|	6k|	1k
-|Atliq Palace	|39k|	24k|	6k|	1k
-|Atliq City	|39k|	23k|	6k|	1k
-|Atliq Bay	|37k|	21k|	5k|	1k
-|Atliq Blu	|35k|	22k|    5k|	1k
-|Atliq Grands	|32k|	17k|	4k|	1k
+|Atliq Exotica|	41k|	23k|	6k|	1k
+|Atliq Palace|	39k|	24k|	6k|	1k
+|Atliq City|	39k|	23k|	6k|	1k
+|Atliq Bay|	37k|	21k|	5k|	1k
+|Atliq Blu|	35k|	22k|	5k|	1k
+|Atliq Grands|	32k|	17k|	4k|	1k
+|Atliq Seasons|	9k|	4k|	1k|	0k
 
 * CATEGORY :
 
@@ -647,13 +645,13 @@ FROM (
         GROUP BY   h.category) D
 ) e
 GROUP BY e.category
-ORDER BY Total_capacity DESC, Total_booking DESC
+ORDER BY SUM(e.capacity) DESC, SUM(e.count_c) DESC, SUM(e.Cancelled_booking) DESC,SUM(e.No_show) DESC
 ```
 
 |category|	Total_capacity|	Total_booking|	Cancelled_booking|	Total_No_show
 |-----|------|-----|------|-------|
-|Business|	87k|	51k	|13k	|2k
-|Luxury	|145k	|84k|	21k	|4k
+|Luxury	|145k|	84k|	21k	|4k
+|Business|	87k	|51k|	13k	|2k
 
 
 # 🧑‍🤝‍🧑 Occupancy Percentage
@@ -701,13 +699,13 @@ SELECT
 FROM aggregated_bookings_Table A
 JOIN Date_Table B ON A.check_in_date = B.Date
 GROUP BY  b.Day_type
-ORDER BY  b.Day_type
+ORDER BY SUM(successful_bookings) / SUM(capacity) DESC
 ```
 
 |Day_type|	Occupancy_percent
 |-------|--------------|
-|Weekday|	51.3%
 |Weekend|	73.6%
+|Weekday|	51.3%
 * ROOM_CLASS :
 
 ```SQL
@@ -715,16 +713,17 @@ SELECT r.room_class,
        CONCAT(ROUND(SUM(successful_bookings) / SUM(capacity) * 100, 1), '%') AS Occupancy_percent
 FROM aggregated_bookings_Table b
 JOIN rooms r ON b.room_category = r.room_id
-GROUP BY r.room_class;
+GROUP BY r.room_class
+ORDER BY SUM(successful_bookings) / SUM(capacity) DESC
 
 ```
 
 |room_class	|Occupancy_percent|
 |--------|-----------|
-|Elite	|57.6%|
-|Premium	|57.6%|
-|Presidential|	59.2%|
-|Standard	|57.9%|
+|Presidential|	59.2%
+|Standard|	57.9%
+|Elite|	57.6%
+|Premium|	57.6%
 
 * Week_no :
 
@@ -2491,7 +2490,7 @@ WHERE [Total Bookings].room_class = No_of_days.room_class
 |Standard|	417
 
 # 🔳 DSRN
-
+https://github.com/saksham-mishra24/Provide-Insights-to-the-Revenue-Team-Hospitality-Domain-SQL-POWERBI-/new/main#:~:text=City%20Revenue%20Insights%20%3A
 * CITY
 
 ```sql
