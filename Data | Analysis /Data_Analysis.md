@@ -1,7 +1,7 @@
 
 # 💰 REVENUE
 
-## 🤯 Insights - https://tinyurl.com/39vez97v
+### 🤯 Insights - https://tinyurl.com/2x5tva85
 
 ###  * Revenue :
 
@@ -231,7 +231,7 @@ ORDER BY
 
 
 ## 🧑‍🤝‍🧑 Capacity | Total_Bookings | Total_cancelled_Bookings | Total_NO_Show
-## 🤯 Insights - (https://tinyurl.com/5n6z7x5t)
+### 🤯 Insights - https://tinyurl.com/2b3hdyvx
 
 
 * MONTH-WISE :
@@ -660,7 +660,7 @@ ORDER BY SUM(e.capacity) DESC, SUM(e.count_c) DESC, SUM(e.Cancelled_booking) DES
 
 
 # 🧑‍🤝‍🧑 Occupancy Percentage
-## 🤯 Insights - https://tinyurl.com/2czutjaa
+### 🤯 Insights - https://tinyurl.com/muehwkp6
 
 * MONTH :
 ```sql
@@ -802,7 +802,7 @@ ORDER BY SUM(successful_bookings) / SUM(capacity) DESC
 
 # 🔲 RevPAR
 
-## 🤯 Insights - https://tinyurl.com/y3wj3686
+### 🤯 Insights - https://tinyurl.com/5etjxw3j 
 
 * MONTH :
 ```sql
@@ -1096,7 +1096,7 @@ ORDER BY AVG(ratings_given) DESC
 |Business|	3.61|
 
 # ❎ Cancellation Percentage
-## 🤯 Insights - https://tinyurl.com/2s48k5h7
+### 🤯 Insights - https://tinyurl.com/5n74h8mu
 
 * MONTH :
 ```sql
@@ -1414,7 +1414,7 @@ JOIN
 
 
 # 🅰️ ADR :
-## 🤯 Insights - https://tinyurl.com/46xy5crv
+### 🤯 Insights - https://tinyurl.com/5kxn7n6x
 ```sql
 SELECT 
      d.Month_year, 
@@ -1565,7 +1565,7 @@ ORDER BY ADR DESC;
 |Luxury   |	12584
 
 # 💠 Realisation_Percentage
-## 🤯 Insights - https://tinyurl.com/2ty69nta
+### 🤯 Insights - https://tinyurl.com/ytpvkh94
 * MONTH 
 ```sql
 WITH Cancellation_Query AS (
@@ -2171,7 +2171,7 @@ FROM
 |Luxury|	70.17%
 
 # ⚪ DURN
-## 🤯 Insights - https://tinyurl.com/2p96cetz
+### 🤯 Insights - https://tinyurl.com/258kxpfz
 * MONTH
 
 ```sql
@@ -2343,7 +2343,7 @@ WHERE [Total Bookings].room_class = No_of_days.room_class
 |Standard	|293
 
 # ◻️ DBRN
-## 🤯 Insights - https://tinyurl.com/5ed246hb
+### 🤯 Insights - https://tinyurl.com/mryr6v3r
 
 * MONTH
 ```sql
@@ -2503,7 +2503,7 @@ WHERE [Total Bookings].room_class = No_of_days.room_class
 
 # 🔳 DSRN
 
-## 🤯 Insights - https://tinyurl.com/4vsjj7c5
+### 🤯 Insights - https://tinyurl.com/4u7b2fkv
 
 * CITY
 
