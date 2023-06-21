@@ -1,5 +1,8 @@
 
 # 💰 REVENUE
+
+## 🤯 Insights - https://tinyurl.com/39vez97v
+
 ###  * Revenue :
 
 ```` sql
@@ -228,6 +231,8 @@ ORDER BY
 
 
 ## 🧑‍🤝‍🧑 Capacity | Total_Bookings | Total_cancelled_Bookings | Total_NO_Show
+## 🤯 Insights - (https://tinyurl.com/5n6z7x5t)
+
 
 * MONTH-WISE :
 
@@ -655,6 +660,8 @@ ORDER BY SUM(e.capacity) DESC, SUM(e.count_c) DESC, SUM(e.Cancelled_booking) DES
 
 
 # 🧑‍🤝‍🧑 Occupancy Percentage
+## 🤯 Insights - https://tinyurl.com/2czutjaa
+
 * MONTH :
 ```sql
 SELECT B.Month_year, 
@@ -795,6 +802,7 @@ ORDER BY SUM(successful_bookings) / SUM(capacity) DESC
 
 # 🔲 RevPAR
 
+## 🤯 Insights - https://tinyurl.com/y3wj3686
 
 * MONTH :
 ```sql
@@ -946,6 +954,8 @@ ORDER BY RevPAR DESC
 
 # ⭐ AVERAGE RATINGS
 
+## 🤯 Insights - https://tinyurl.com/y3wj3686
+
 * MONTH :
 ```sql
 SELECT B.Month_year, 
@@ -1086,6 +1096,7 @@ ORDER BY AVG(ratings_given) DESC
 |Business|	3.61|
 
 # ❎ Cancellation Percentage
+## 🤯 Insights - https://tinyurl.com/2s48k5h7
 
 * MONTH :
 ```sql
@@ -1285,7 +1296,7 @@ JOIN
 |32|	23.99%
 
 * PLATFORM :
-REVNEUE BY 
+
 
 ```SQL
 
@@ -1403,8 +1414,7 @@ JOIN
 
 
 # 🅰️ ADR :
-
-* MONTH
+## 🤯 Insights - https://tinyurl.com/46xy5crv
 ```sql
 SELECT 
      d.Month_year, 
@@ -1555,7 +1565,7 @@ ORDER BY ADR DESC;
 |Luxury   |	12584
 
 # 💠 Realisation_Percentage
-
+## 🤯 Insights - https://tinyurl.com/2ty69nta
 * MONTH 
 ```sql
 WITH Cancellation_Query AS (
@@ -2161,7 +2171,7 @@ FROM
 |Luxury|	70.17%
 
 # ⚪ DURN
-
+## 🤯 Insights - https://tinyurl.com/2p96cetz
 * MONTH
 
 ```sql
@@ -2333,6 +2343,7 @@ WHERE [Total Bookings].room_class = No_of_days.room_class
 |Standard	|293
 
 # ◻️ DBRN
+## 🤯 Insights - https://tinyurl.com/5ed246hb
 
 * MONTH
 ```sql
@@ -2464,6 +2475,7 @@ WHERE [Total Bookings].Week_no = No_of_days.Week_no
 |30|	1288
 |31|	1288
 |32|	1651
+
 * Room_class
 ```sql
 SELECT No_of_days.room_class, (booking / NO_OF_DAYS) AS DBRN
@@ -2490,7 +2502,9 @@ WHERE [Total Bookings].room_class = No_of_days.room_class
 |Standard|	417
 
 # 🔳 DSRN
-https://github.com/saksham-mishra24/Provide-Insights-to-the-Revenue-Team-Hospitality-Domain-SQL-POWERBI-/new/main#:~:text=City%20Revenue%20Insights%20%3A
+
+## 🤯 Insights - https://tinyurl.com/4vsjj7c5
+
 * CITY
 
 ```sql
