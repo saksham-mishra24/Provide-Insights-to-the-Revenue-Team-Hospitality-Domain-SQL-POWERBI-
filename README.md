@@ -3,9 +3,7 @@
 
 # 📚 Introduction
 
-AtliQ Hardware is a company that supplies computer hardware and peripherals to various clients across India, including Excel Stores and Nomad Stores. 
-
-The company has a head office in Delhi, India, and several regional offices throughout the country.
+AtliQ Grands owns multiple five-star hotels across India. They have been in the hospitality industry for the past 20 years.
 
 This project demonstrates data analysis skills and visualization for the company using SQL Server and PowerBI.
 
